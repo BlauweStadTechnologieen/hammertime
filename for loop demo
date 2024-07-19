@@ -1,0 +1,47 @@
+for(int i = TotalOpenOrders - 1; i >= 0; i--){
+      
+      if(OrderSelect(i, SELECT_BY_POS, MODE_TRADES)){
+            
+         if(OrderSymbol() == Symbol()){
+         
+            if(OrderMagicNumber() == Period()){
+            
+               ChartButtonStaticAttributes(); 
+               
+               ChartButtonFluidAttributes(clrGreen,clrCrimson,clrGray);
+                              
+            } else {
+               
+               continue;
+            
+            }
+         
+         } else {
+         
+            continue;
+         
+         }
+         
+      } else {
+                  
+        break;
+      
+      }
+      
+   }
+   
+   if(!OrderSelect(OrdersTotal() - 1, SELECT_BY_POS, MODE_TRADES)){
+         
+      GetCurrentErrorCode = 0;
+      
+      if (OperationMode == 1){
+         
+         ChartButtonFluidAttributes(clrGreen,clrCrimson,clrGray);
+               
+      } else {
+      
+         DeletePositionCartObjects();
+      
+      }
+   
+   } 

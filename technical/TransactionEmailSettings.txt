@@ -1,0 +1,32 @@
+SMTP Server: smtp.socketlabs.com:2525
+SMPT Login: server36720
+SMTP Password: Ls8r5Q3NtAz24G
+SMTP From: Hello from Blue City Capital, <hello@bluecitycapitalinvestments.com>
+SMTP to: todd.gilbey@bluecitycapital.com
+/========================================================================================/
+
+A34D129D
+
+/========================================================================================/
+Account Server: Edge05
+AccountNumber 565987
+Password: Gillus2020@@$!
+/========================================================================================/
+
+SMPT Username: apikey
+SMTP Server: smtp.sendgrid.net
+SMTP Password: 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 
+SMTP From: Blue City Capital Investments <hello@bluecitycapital.com>
+SMTP to: todd.gilbey@bluecitycapital.com
+
+Alternative SMTP to: hello@bluecitycapital.com
+
+/========================================================================================/
+
+MT4 Login: 515845
+MT4 Password: gKrt1YT
+Investor Password: o8lwwOx
+
+/========================================================================================/
+
+f3iwjgq

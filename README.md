@@ -53,9 +53,8 @@ A brief description of your project.
 
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/username/repo-name.svg)
 ![GitHub issues](https://img.shields.io/github/issues/username/repo-name.svg)
-![GitHub issues](https://img.shields.io/github/issues/username/repo-name.svg)
-
-
+![Downloads](https://img.shields.io/github/downloads/username/repo-name/total.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/username/repo-name.svg)
 
 
 ## Usage
@@ -66,6 +65,7 @@ Contributes are always welcome. You can submit a pull request, or email [enginee
 You can also submit a support ticket my emailing [hello@bluecitycapital.com](mailto:hello@bluecitycapital.com)
 
 ## Licence
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 

@@ -8,18 +8,69 @@
 #property strict
 #include <MessagesModule.mqh>
 #include <GlobalNamespace.mqh>
+#include <ConfirmationMessage.mqh>
 
 double OrderTransactionCost(double &TransactionCostItem[], int NumberOfItems){
 
    double ExecutionCost = 0;
       
-   for(int i = 0; i < NumberOfItems; NumberOfItems ++){
+   for(int i = 0; i < NumberOfItems; i++){
    
       ExecutionCost += TransactionCostItem[i];
    
    }
 
    return ExecutionCost;
+
+}
+
+void VariableInitialization(){
+
+   MessageSent             =  False;
+   BarTime                 =  Time[0];
+
+   return;
+
+}
+
+void GetHighestofLowestPrice(){
+
+   double   OpenClose[2]; 
+   
+   OpenClose[0] = HammerHeadOpen;                                         
+      
+   OpenClose[1] = HammerHeadClose;                                                
+                                                                              
+   HighestofOpenOrClose = NormalizeDouble(OpenClose[ArrayMaximum(OpenClose,WHOLE_ARRAY,0)],Digits);                    
+            
+   LowestOfOpenOrClose = NormalizeDouble(OpenClose[ArrayMinimum(OpenClose,WHOLE_ARRAY,0)],Digits);
+   
+}
+
+void DislayServerTime(){
+
+   string TimeWithMinutes = TimeToStr(TimeLocal(),TIME_DATE | TIME_SECONDS);
+   
+   Comment(TimeWithMinutes);
+
+}
+
+void ErrorReset(){
+
+   ResetLastError();
+   Print("Resetting Error Logging Systems...");
+   GetLastError();
+   GetCurrentErrorCode = 0;
+   
+   if(GetLastError()  != 0){
+   
+      DiagnosticMessaging("Error Logging Systems Not Reset","There was an error in resetting the logging system on system initialisation.\n\nThe last error code still remained at "+string(GetLastError())+" The error logging system should not be reset");
+      
+   } else {
+   
+      Print("Error Logging Systems Successfully Reset");
+         
+   }
 
 }
 
@@ -40,7 +91,13 @@ void DeletePositionCartObjects(){
    ObjectDelete(ChartID_PipDisplayStatic); 
    ObjectDelete(ChartID_SpreadDisplay);
 
-return;
+   return;
+
+}
+
+void ChartIDExtTest(){
+
+   Print("Your Unique Chart Identifier - sourced externally - is ",UniqueChartIdentifier);
 
 }
 
@@ -52,18 +109,32 @@ void DeletePairSupensionNotice(){
 
 void PrintTransactionEvent(string LoggingMessage){
 
-   if (OperationMode == 1){
+   if (DebugMode == DebugOn){
    
       if(!MessageSent){
       
          Print(LoggingMessage);
          
          MessageSent = True;
-         
-         //ExpertRemove();
       
       }
    
    }
    
+}
+
+void PrintDebugMessage(string DebugMessage){
+
+   if(DebugMode == DebugOn){
+   
+      if(!MessageSent){
+         
+         Print(DebugMessage);
+         
+         MessageSent = True;
+      
+      }
+   
+   }
+
 }

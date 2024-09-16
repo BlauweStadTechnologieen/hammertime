@@ -52,9 +52,9 @@ A brief description of your project.
 ### [v2024.18.0.1] - 2024-09-16
 
 #### Added
-- When in DEBUG mode, we found that it was selecting the ``OrderOpenPrice()`` from the history ledger as opposed to using the zero value. This meant that it was giving an inaccurate number if pips gained when displayed on the chart.
-- Because of this, we have created an ``_OrderOpenPrice`` value with a random profit figure to simulate a profit on tbe position.
-- In addition to this, we have implemented a replacement function which looks out for new orders that have been added to the orders history history. This will be checked on every incoming tick and is currently in beta mode. The purpose of this new function is to simplify the process of checking for new orders in the history ledger, which will then be used to gleam data from the latest closed order, thence a transactional email will then be sent to the user which will contain key data, such as the crystalized profit or loss, the price with which the position closed at, the ticket reference number as well as any additional costs incurred in the process of closing the position. 
+- When in DEBUG mode, we found that it was selecting the ``OrderOpenPrice()`` from the history ledger as opposed to using the zero value. This meant that it was giving an inaccurate number of pips gained when displayed on the chart.This was due to subtracting the ``_OrderOpenPrice`` of the last closed order from the current market price. This was of course inaccurate, however, this would only be the case when in ``DEBUG`` mode. 
+- Because of this, we have created an ``_OrderOpenPrice`` value with a random profit figure to simulate a profit on tbe position when you're in debug mode.
+- In addition to this, we have implemented a replacement function which will replace the ``fEvents`` functions. The replacement function will perform the same as the previous function in that it will look for new orders that have been added to the orders history history. This will be checked on every incoming tick and is currently in beta mode. The purpose of this new function is to simplify the process of checking for new orders in the history ledger, which will then be used to gleam data from the latest closed order, thence a transactional email will then be sent to the user which will contain key data, such as the crystalized profit or loss, the price with which the position closed, the ticket reference number as well as any additional costs incurred in the process of closing the position.
 
 ## Technical Data
 

@@ -49,7 +49,6 @@ A brief description of your project.
 - We have cleaned up and improved the ``WriteFile`` function. The screenshot capture function has now been removed from this ``WriteFile`` function. The screenshot capture function will now only run when an order is successfully executed.
 
 #### Future Developments
-- We will impmenent a ``for`` loop in the ``CheckHistory()`` function to ensure that regardless as to the order history chronollogy, the most recent order - which matches the ``Symbol()`` to the ``OrderSymbol()`` - will be processed.
 - In addition, we will centrally declare certain variables depending on whether the system is in Debug mode or not. This hopefully make things a bit more efficient and will save us from have to redeclare variables that may have declared with different values at an earlier time in the current iteration - which may return incorrect results. 
 
 ## Technical Data

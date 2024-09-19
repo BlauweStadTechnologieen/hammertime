@@ -49,7 +49,13 @@ A brief description of your project.
 - We have cleaned up and improved the ``WriteFile`` function. The screenshot capture function has now been removed from this ``WriteFile`` function. The screenshot capture function will now only run when an order is successfully executed.
 
 #### Future Developments
-- In addition, we will centrally declare certain variables depending on whether the system is in Debug mode or not. This hopefully make things a bit more efficient and will save us from have to redeclare variables that may have declared with different values at an earlier time in the current iteration - which may return incorrect results. 
+- In addition, we will centrally declare certain variables depending on whether the system is in Debug mode or not. This hopefully make things a bit more efficient and will save us from have to redeclare variables that may have declared with different values at an earlier time in the current iteration - which may return incorrect results.
+
+### [v2024.18.1.1] - 2024-09-19
+
+## Added
+- We have added a ``sleep(1000)`` to the diagnostics module ``(RunDiagnostics.mqh Line 15)`` as we were finding that it was returning an incorrect trading hour. For example, the position or diagnosic message was being sent for a position that would have been, or was execured (respectively) at 1700 when the data was showing as 1600. This was because there were occasions where the data was being sent at ``16:59:59`` and not at ``17:00:00``, giving a reading of 16 and not 17. By delaying of sending the position data by one second will mean that the data will be sent in the correct trading hour.
+- Added a symbol check on line 226 for better efficiency for the the memory.
 
 ## Technical Data
 

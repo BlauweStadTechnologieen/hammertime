@@ -1,5 +1,6 @@
 # Project Name
-![GitHub Release](https://img.shields.io/github/v/release/BlauweStadTechnologieen/hammertime?include_prereleases&sort=date&display_name=release)
+![GitHub Release](https://img.shields.io/github/v/release/blauwestadtechnologieen/hammertime?display_name=release&label=Latest%20Release)
+
 
 ## Description
 A brief description of your project.

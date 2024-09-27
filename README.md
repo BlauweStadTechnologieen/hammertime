@@ -1,5 +1,5 @@
 # Project Name
-![Version](https://img.shields.io/github/v/release/username/repo-name.svg)
+![GitHub Release](https://img.shields.io/github/v/release/BlauweStadTechnologieen/hammertime?include_prereleases&sort=date&display_name=release)
 
 ## Description
 A brief description of your project.
@@ -17,9 +17,9 @@ A brief description of your project.
 8. [License](#license)
 9. [Acknowledgements](#acknowledgements)
 
-## Dependancies
+## Downloads
 
-![Dependencies](https://img.shields.io/david/username/repo-name.svg)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/blauwestadtechnologieen/hammertime/total)
 
 
 ## Installation
